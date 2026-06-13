@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ArrowLeft, CheckCircle2, ExternalLink, ShieldCheck } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowLeft, CheckCircle2, ShieldCheck } from 'lucide-react';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:10000';
 

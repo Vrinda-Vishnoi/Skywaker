@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useMemo } from 'react';
+import { useEffect, useRef, useState, useMemo } from 'react';
 import Globe from 'react-globe.gl';
 import * as satellite from 'satellite.js';
 import * as THREE from 'three';
@@ -50,7 +50,7 @@ interface SatelliteGlobeProps {
 }
 
 export function SatelliteGlobe({ onSatelliteClick, selectedNoradId, userLocation }: SatelliteGlobeProps) {
-  const globeEl = useRef<any>();
+  const globeEl = useRef<any>(null);
   const [satData, setSatData] = useState<any[]>([]);
   const [satRecords, setSatRecords] = useState<any[]>([]);
   const [dimensions, setDimensions] = useState({ width: window.innerWidth, height: window.innerHeight });
