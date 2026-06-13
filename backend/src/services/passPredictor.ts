@@ -1,5 +1,5 @@
 import * as satellite from 'satellite.js';
-import * as astronomy from 'astronomy-engine';
+import { AstroTime, Observer, Horizon, Equator, Body } from 'astronomy-engine';
 
 export interface PassMetrics {
   observerSunAltitudeDeg: number;
@@ -27,10 +27,10 @@ export interface PassPrediction {
 }
 
 function calculateObserverSunAltitude(date: Date, lat: number, lon: number): number {
-  const observer = new astronomy.Observer(lat, lon, 0);
-  const time = new astronomy.AstroTime(date);
-  const sunPos = astronomy.Equator('Sun', time, observer, true, true);
-  const hor = astronomy.Horizon(time, observer, sunPos.ra, sunPos.dec, 'normal');
+  const observer = new Observer(lat, lon, 0);
+  const time = new AstroTime(date);
+  const sunPos = Equator(Body.Sun, time, observer, true, true);
+  const hor = Horizon(time, observer, sunPos.ra, sunPos.dec, 'normal');
   return hor.altitude;
 }
 
