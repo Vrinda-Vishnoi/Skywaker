@@ -15,6 +15,9 @@ pids
 *.pid
 *.seed
 *.pid.lock
+*.docs
+*.pdf
+
 
 # Dependency directories
 node_modules/
@@ -37,6 +40,7 @@ build/
 .env.development.local
 .env.test.local
 .env.production.local
+
 
 # IDEs and Editors
 .idea/
